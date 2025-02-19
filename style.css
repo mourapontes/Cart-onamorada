@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Use min-height para o conteúdo se estender em telas menores */
+    margin: 0;
+    background-color: #f4e7eb;
+    background-image: url('fundo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    background-color: #fff;
+    padding: 20px; /* Reduzimos o padding padrão */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%; /* O cartão ocupa 90% da tela */
+    animation: fadeIn 1s ease-in-out;
+    display: flex; /* Usamos flexbox para organizar o conteúdo do cartão */
+    flex-direction: column; /* Organiza os elementos verticalmente */
+}
+
+.title {
+    color: #e44f6a;
+    margin-bottom: 10px; /* Margem reduzida */
+    font-size: 1.8em; /* Fonte menor para telas menores */
+}
+
+.message {
+    color: #555;
+    margin-bottom: 15px; /* Margem reduzida */
+    font-size: 1em; /* Fonte menor para telas menores */
+    line-height: 1.4; /* Linhas mais próximas */
+}
+
+#revealButton {
+    background-color: #e44f6a;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Ajuste de padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em; /* Fonte menor para telas menores */
+    transition: background-color 0.3s ease;
+    margin: 0 auto; /* Centraliza o botão */
+    width: fit-content; /* O botão ocupa apenas o espaço necessário */
+}
+
+#revealButton:hover {
+    background-color: #c8344e;
+}
+
+#secretMessage {
+    margin-top: 15px; /* Margem reduzida */
+    font-style: italic;
+    color: #e44f6a;
+    font-size: 1em; /* Fonte menor para telas menores */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out, margin-top 0.5s ease-in-out;
+    line-height: 1.4; /* Linhas mais próximas */
+}
+
+#secretMessage.hide {
+    opacity: 0;
+    margin-top: 0;
+    display:none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media query para telas menores que 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+    .card {
+        padding: 15px; /* Padding menor */
+        width: 95%; /* Ocupa 95% da largura */
+        max-width: none; /* Remove o limite max-width */
+    }
+    
+    .title {
+        font-size: 1.5em; /* Ajuste do tamanho da fonte */
+        margin-bottom: 8px;
+    }
+
+    .message {
+      font-size: 0.9em; /* Ajuste do tamanho da fonte */
+      margin-bottom: 12px;
+    }
+
+    #revealButton{
+        font-size: 0.8em; /* Ajuste do tamanho da fonte */
+    }
+
+    #secretMessage {
+       font-size: 0.9em; /* Ajuste do tamanho da fonte */
+       margin-top: 10px;
+    }
+}
+
+/* Media query para telas menores que 480px (smartphones pequenos) */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.3em; /* Ajuste do tamanho da fonte */
+    }
+    .message {
+        font-size: 0.85em; /* Ajuste do tamanho da fonte */
+    }
+
+    #secretMessage{
+        font-size: 0.85em; /* Ajuste do tamanho da fonte */
+    }
+}
